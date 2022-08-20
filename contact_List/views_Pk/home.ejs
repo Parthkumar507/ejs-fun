@@ -7,10 +7,24 @@
     <title> <%=name%></title>
 </head>
 <body>
-    <h1>Rendered from ejs views    </h1>
-<p>
-    This is <%=name%> page
-</p>
+    <h1>Contact List   </h1>
+<ul>
+    <%for(let i of contact_list) {%>
+    <li>
+        <p><%=i.name%></p>
+        <p><%=i.phone%></p>
+        
+    </li>
+    <%}%>
+</ul>
+
+
+<form action="/create" method="POST">
+    <input type="text" name_input="name" placeholder="GIve me your name "required >
+    <input type="number" phone_input="phone" placeholder="phone No. do" required>
+    <button type="submit">Add Contact </button>
+
+</form>
     
 </body>
 </html>
